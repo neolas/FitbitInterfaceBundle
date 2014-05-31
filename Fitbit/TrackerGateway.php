@@ -31,8 +31,8 @@ class TrackerGateway extends EndpointGateway {
 	public function getDevices()
 	{
 		/** @var Stopwatch $timer */
-		$timer = new Stopwatch();
-		$timer->start('Get Devices', 'Fitbit API');
+		$timer = $this->stopwatch;
+		$timer->start('Get Devices', 'Fitbit_API');
 
 		try
 		{
@@ -61,8 +61,8 @@ class TrackerGateway extends EndpointGateway {
     public function getAlarms($tracker)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = new Stopwatch();
-	    $timer->start('Get Alarms', 'Fitbit API');
+	    $timer = $this->stopwatch;
+	    $timer->start('Get Alarms', 'Fitbit_API');
 
 	    try
         {

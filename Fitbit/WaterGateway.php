@@ -31,8 +31,8 @@ class WaterGateway extends EndpointGateway {
     public function getWater(\DateTime $date)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = new Stopwatch();
-	    $timer->start('Get Water', 'Fitbit API');
+	    $timer = $this->stopwatch;
+	    $timer->start('Get Water', 'Fitbit_API');
 
 	    $dateStr = $date->format('Y-m-d');
 
@@ -67,8 +67,8 @@ class WaterGateway extends EndpointGateway {
     public function logWater(\DateTime $date, $amount, $waterUnit = null)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = new Stopwatch();
-	    $timer->start('Log Water', 'Fitbit API');
+	    $timer = $this->stopwatch;
+	    $timer->start('Log Water', 'Fitbit_API');
 
 	    $parameters = array();
         $parameters['date'] = $date->format('Y-m-d');
@@ -103,8 +103,8 @@ class WaterGateway extends EndpointGateway {
     public function deleteWater($id)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = new Stopwatch();
-	    $timer->start('Delete Water', 'Fitbit API');
+	    $timer = $this->stopwatch;
+	    $timer->start('Delete Water', 'Fitbit_API');
 
 	    try
         {

@@ -55,5 +55,12 @@ class RateLimiting
         $this->client = $client;
         $this->clientReset = $clientReset;
         $this->clientQuota = $clientQuota;
+
+	    try
+	    {
+		    $logger = RequestLogger::getInstance();
+		    $logger::logQuota($viewer, $client, $viewerReset, $clientReset, $viewerQuota, $clientQuota);
+	    }
+	    catch(\Exception $e){}
     }
 }

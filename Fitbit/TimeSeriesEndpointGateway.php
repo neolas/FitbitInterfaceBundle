@@ -58,7 +58,7 @@ class TimeSeriesEndpointGateway extends EndpointGateway
     public function get($fragment, $baseDate = null, $end = null)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = new Stopwatch();
+	    $timer = $this->stopwatch;
 	    $timer->start('Get '.$fragment, 'Fitbit API');
 
 	    if (!isset($baseDate)) $date1 = 'today';
