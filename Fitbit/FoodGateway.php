@@ -31,8 +31,8 @@ class FoodGateway extends EndpointGateway
     public function getFoods($date)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Get Foods', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Get Foods', 'Fitbit API');
 
         $dateStr = $date->format('Y-m-d');
 
@@ -62,8 +62,8 @@ class FoodGateway extends EndpointGateway
     public function getRecentFoods()
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Get Recent Foods', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Get Recent Foods', 'Fitbit API');
 
 	    try
 	    {
@@ -91,8 +91,8 @@ class FoodGateway extends EndpointGateway
     public function getFrequentFoods()
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Get Frequent Foods', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Get Frequent Foods', 'Fitbit API');
 
         try
         {
@@ -120,8 +120,8 @@ class FoodGateway extends EndpointGateway
     public function getFavoriteFoods()
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Get Favorite Foods', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Get Favorite Foods', 'Fitbit API');
 
         try
         {
@@ -158,8 +158,8 @@ class FoodGateway extends EndpointGateway
     public function logFood(\DateTime $date, $foodId, $mealTypeId, $unitId, $amount, $foodName = null, $calories = null, $brandName = null, $nutrition = null)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Log Food', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Log Food', 'Fitbit API');
 
         $parameters = array();
         $parameters['date'] = $date->format('Y-m-d');
@@ -208,8 +208,8 @@ class FoodGateway extends EndpointGateway
     public function deleteFood($id)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Delete Food', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Delete Food', 'Fitbit API');
 
         try
         {
@@ -238,8 +238,8 @@ class FoodGateway extends EndpointGateway
     public function addFavoriteFood($id)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Add Favorite Food', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Add Favorite Food', 'Fitbit API');
 
         try
         {
@@ -268,8 +268,8 @@ class FoodGateway extends EndpointGateway
     public function deleteFavoriteFood($id)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Delete Favorite Food', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Delete Favorite Food', 'Fitbit API');
 
         try
         {
@@ -297,8 +297,8 @@ class FoodGateway extends EndpointGateway
     public function getMeals()
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Get Meal Sets', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Get Meal Sets', 'Fitbit API');
 
         try
         {
@@ -326,8 +326,8 @@ class FoodGateway extends EndpointGateway
     public function getFoodUnits()
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Get Food Units', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Get Food Units', 'Fitbit API');
 
         try
         {
@@ -356,8 +356,8 @@ class FoodGateway extends EndpointGateway
     public function searchFoods($query)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Search Foods', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Search Foods', 'Fitbit API');
 
         try
         {
@@ -386,8 +386,8 @@ class FoodGateway extends EndpointGateway
     public function getFood($id)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Get Food', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Get Food', 'Fitbit API');
 
         try
         {
@@ -422,8 +422,8 @@ class FoodGateway extends EndpointGateway
     public function createFood($name, $defaultFoodMeasurementUnitId, $defaultServingSize, $calories, $description = null, $formType = null, $nutrition = null)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Create Food', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Create Food', 'Fitbit API');
 
         $parameters = array();
         $parameters['name'] = $name;

@@ -30,8 +30,8 @@ class UserGateway extends EndpointGateway
     public function getProfile()
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Get Profile', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Get Profile', 'Fitbit API');
 
 	    try
         {
@@ -60,8 +60,8 @@ class UserGateway extends EndpointGateway
     public function updateProfileFromArray($parameters)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Update Profile', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Update Profile', 'Fitbit API');
 
 	    try
         {
@@ -146,8 +146,8 @@ class UserGateway extends EndpointGateway
     public function getFriends()
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Get Friends', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Get Friends', 'Fitbit API');
 
 	    try
 	    {
@@ -175,8 +175,8 @@ class UserGateway extends EndpointGateway
     public function getFriendsLeaderboard()
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Get Friends Leaderboard', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Get Friends Leaderboard', 'Fitbit API');
 
 	    try
         {
@@ -204,8 +204,8 @@ class UserGateway extends EndpointGateway
 	public function getInvites()
 	{
 		/** @var Stopwatch $timer */
-		$timer = $this->stopwatch;
-		$timer->start('Get Invites', 'Fitbit_API');
+		$timer = new Stopwatch();
+		$timer->start('Get Invites', 'Fitbit API');
 
 		try
 		{
@@ -235,8 +235,8 @@ class UserGateway extends EndpointGateway
     public function inviteFriend($userId = null, $email = null)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Invite Friend', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Invite Friend', 'Fitbit API');
 
 	    $parameters = array();
         if (isset($userId)) $parameters['invitedUserId'] = $userId;
@@ -269,8 +269,8 @@ class UserGateway extends EndpointGateway
     public function acceptFriend($userId)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Accept Friend', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Accept Friend', 'Fitbit API');
 
 	    $parameters = array();
         $parameters['accept'] = 'true';
@@ -302,8 +302,8 @@ class UserGateway extends EndpointGateway
     public function rejectFriend($userId)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Reject Friend', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Reject Friend', 'Fitbit API');
 
 	    $parameters = array();
         $parameters['accept'] = 'false';
@@ -334,8 +334,8 @@ class UserGateway extends EndpointGateway
 	public function getBadges()
 	{
 		/** @var Stopwatch $timer */
-		$timer = $this->stopwatch;
-		$timer->start('Get Badges', 'Fitbit_API');
+		$timer = new Stopwatch();
+		$timer->start('Get Badges', 'Fitbit API');
 
 		try
 		{
@@ -366,8 +366,8 @@ class UserGateway extends EndpointGateway
     public function addSubscription($id, $subscriptionType = 'all', $subscriberId = null)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Add Subscription', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Add Subscription', 'Fitbit API');
 
 	    try
         {
@@ -403,8 +403,8 @@ class UserGateway extends EndpointGateway
     public function deleteSubscription($id, $subscriptionType = 'all', $subscriberId = null)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Delete Subscriptions', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Delete Subscriptions', 'Fitbit API');
 
 	    try
         {
@@ -497,8 +497,8 @@ class UserGateway extends EndpointGateway
     public function getSubscriptions()
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Get Subscriptions', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Get Subscriptions', 'Fitbit API');
 
 	    try
         {

@@ -30,8 +30,8 @@ class ActivityGateway extends EndpointGateway
     public function getActivityStats()
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Get Activity Stats', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Get Activity Stats', 'Fitbit API');
         try
         {
 	        /** @var SimpleXMLElement|object $activityStats */
@@ -59,8 +59,8 @@ class ActivityGateway extends EndpointGateway
     public function getActivities(\DateTime $date)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Get Activities', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Get Activities', 'Fitbit API');
 
         $dateStr = $date->format('Y-m-d');
 
@@ -90,8 +90,8 @@ class ActivityGateway extends EndpointGateway
     public function getRecentActivities()
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Get Recent Activities', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Get Recent Activities', 'Fitbit API');
 
 	    try
 	    {
@@ -119,8 +119,8 @@ class ActivityGateway extends EndpointGateway
     public function getFrequentActivities()
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Get Frequent Activities', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Get Frequent Activities', 'Fitbit API');
 
         try
         {
@@ -148,8 +148,8 @@ class ActivityGateway extends EndpointGateway
     public function getFavoriteActivities()
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Get Favorite Activities', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Get Favorite Activities', 'Fitbit API');
 
         try
         {
@@ -184,8 +184,8 @@ class ActivityGateway extends EndpointGateway
     public function logActivity(\DateTime $date, $activity, $duration, $calories = null, $distance = null, $distanceUnit = null)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Log Activity', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Log Activity', 'Fitbit API');
 
 	    if (!isset($date))
 	    {
@@ -262,8 +262,8 @@ class ActivityGateway extends EndpointGateway
     public function deleteActivity($id)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Delete Activity', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Delete Activity', 'Fitbit API');
 
 	    if (!is_integer($id))
 	    {
@@ -296,8 +296,8 @@ class ActivityGateway extends EndpointGateway
     public function addFavoriteActivity($id)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Add Favorite Activity', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Add Favorite Activity', 'Fitbit API');
 
 	    if (!is_integer($id))
 	    {
@@ -331,8 +331,8 @@ class ActivityGateway extends EndpointGateway
     public function deleteFavoriteActivity($id)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Delete Favorite Activity', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Delete Favorite Activity', 'Fitbit API');
 
 	    if (!is_integer($id))
 	    {
@@ -366,8 +366,8 @@ class ActivityGateway extends EndpointGateway
     public function getActivity($id)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Get Activity', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Get Activity', 'Fitbit API');
 
 	    if (!is_integer($id))
 	    {
@@ -400,8 +400,8 @@ class ActivityGateway extends EndpointGateway
     public function browseActivities()
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Browse Activities', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Browse Activities', 'Fitbit API');
 
         try
         {

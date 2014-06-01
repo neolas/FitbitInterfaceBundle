@@ -31,8 +31,8 @@ class SleepGateway extends EndpointGateway {
     public function getSleep($date)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Get Sleep', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Get Sleep', 'Fitbit API');
 
 	    $dateStr = $date->format('Y-m-d');
 
@@ -64,8 +64,8 @@ class SleepGateway extends EndpointGateway {
     public function logSleep(\DateTime $date, $duration)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Log Sleep', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Log Sleep', 'Fitbit API');
 
 	    $parameters = array();
         $parameters['date'] = $date->format('Y-m-d');
@@ -99,8 +99,8 @@ class SleepGateway extends EndpointGateway {
     public function deleteSleep($id)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Delete Sleep', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Delete Sleep', 'Fitbit API');
 
 	    try
         {

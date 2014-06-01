@@ -31,19 +31,12 @@ class EndpointGateway
      * @var string
      */
     protected $userID;
-	/**
-	 * @var array $configuration
-	 */
+	/** @var array $configuration */
 	protected $configuration;
-	/**
-	 * @var Stopwatch
-	 */
-	protected $stopwatch;
 
-	public function __construct($configuration, $stopwatch)
+	public function __construct($configuration)
 	{
 		$this->configuration = $configuration;
-		$this->stopwatch = $stopwatch;
 	}
 
     /**
@@ -92,7 +85,7 @@ class EndpointGateway
      * Make an API request
      *
      * @access protected
-     * @version 0.5.3
+     * @version 0.5.2
      *
      * @param string $resource Endpoint after '.../1/'
      * @param string $method ('GET', 'POST', 'PUT', 'DELETE')
@@ -104,9 +97,8 @@ class EndpointGateway
     protected function makeApiRequest($resource, $method = 'GET', $body = array(), $extraHeaders = array())
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-
-	    $timer->start('API Request', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('API Request', 'Fitbit API');
 
         $path = $resource . '.' . $this->responseFormat;
 
@@ -115,35 +107,14 @@ class EndpointGateway
             $body = array();
         }
 
-	    $requestStart = microtime(true);
 	    try
 	    {
             $response = $this->service->request($path, $method, $body, $extraHeaders);
 	    }
 	    catch (\Exception $e)
 	    {
-		    try
-		    {
-			    $requestEnd = microtime(true);
-			    $logger = RequestLogger::getInstance();
-			    $logger::logApiCall(
-				    array(
-					    'path'    => $path,
-					    'method'  => $method,
-					    'body'    => $body,
-					    'headers' =>$extraHeaders
-				    ),
-				    ($requestEnd - $requestStart),
-				    null,
-				    $e
-			    );
-		    }
-		    catch (\Exception $e)
-		    {}
-		    $timer->stop('API Request');
 		    throw new FBException('The service request failed.', 401, $e);
 	    }
-	    $requestEnd = microtime(true);
 
         try
         {
@@ -151,28 +122,8 @@ class EndpointGateway
         }
         catch (\Exception $e)
 	    {
-		    $timer->stop('API Request');
 		    throw new FBException('The response from Fitbit could not be interpreted.', 402, $e);
 	    }
-
-	    try
-	    {
-			$logger = RequestLogger::getInstance();
-		    $logger::logApiCall(
-			    array(
-				    'path'    => $path,
-		            'method'  => $method,
-				    'body'    => $body,
-				    'headers' =>$extraHeaders
-			    ),
-			    ($requestEnd - $requestStart),
-			    $response,
-			    null
-		    );
-	    }
-	    catch (\Exception $e)
-	    {}
-
 	    $timer->stop('API Request');
 	    return $response;
     }
@@ -225,8 +176,8 @@ class EndpointGateway
     public function getRateLimit()
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('API Rate Limit Request', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('API Rate Limit Request', 'Fitbit API');
 	    try
 	    {
             $clientAndUser = $this->makeApiRequest('account/clientAndViewerRateLimitStatus');
@@ -235,12 +186,13 @@ class EndpointGateway
 	    catch (\Exception $e)
 	    {
 		    $timer->stop('API Rate Limit Request');
-		    return false;
+		    throw new FBException('Could not get the rate limit data.', 406, $e);
 	    }
 
 	    try
 	    {
-	        $rateLimiting = new RateLimiting(
+		    $timer->stop('API Rate Limit Request');
+	        return new RateLimiting(
 	            $clientAndUser->rateLimitStatus->remainingHits,
 	            $client->rateLimitStatus->remainingHits,
 	            new \DateTime($clientAndUser->rateLimitStatus->resetTime),
@@ -248,8 +200,6 @@ class EndpointGateway
 	            $clientAndUser->rateLimitStatus->hourlyLimit,
 	            $client->rateLimitStatus->hourlyLimit
 	        );
-		    $timer->stop('API Rate Limit Request');
-		    return $rateLimiting;
 	    }
 	    catch (\Exception $e)
 	    {

@@ -12,8 +12,3 @@ services:
             - %nibynool_fitbit_interface.callback%
             - %nibynool_fitbit_interface.configuration%
             - @router
-            - @?debug.stopwatch
-    data_collector.fitbit_interface:
-        class:  Nibynool\FitbitInterfaceBundle\DataCollectors\FitbitDataCollector
-        tags:
-            - { name: data_collector, template: 'NibynoolFitbitInterfaceBundle:Templates:FitbitDataCollector.html.twig', id: Fitbit Interface }
