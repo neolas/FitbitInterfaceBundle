@@ -220,7 +220,7 @@ class ApiGatewayFactory
 	 *
 	 * @param $method
 	 * @param $parameters
-	 * @throws Exception
+	 * @throws FBException
 	 * @return mixed
 	 */
 	public function __call($method, $parameters)
