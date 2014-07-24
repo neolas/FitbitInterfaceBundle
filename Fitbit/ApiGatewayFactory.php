@@ -299,7 +299,7 @@ class ApiGatewayFactory
 	        {
 	            $factory = new ServiceFactory();
 		        if ($this->httpClient) $factory->setHttpClient($this->httpClient);
-		        $this->service = $factory->createService('Fitbit', $credentials, $this->storageAdapter);
+		        $this->service = $factory->createService('FitBit', $credentials, $this->storageAdapter);
 	        }
 	        catch (\Exception $e)
 	        {
