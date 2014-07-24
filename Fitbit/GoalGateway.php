@@ -30,8 +30,8 @@ class GoalGateway extends EndpointGateway
     public function getBodyWeightGoal()
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Get Body Weight Goal', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Get Body Weight Goal', 'Fitbit API');
 
         try
         {
@@ -59,8 +59,8 @@ class GoalGateway extends EndpointGateway
 	public function getBodyFatGoal()
 	{
 		/** @var Stopwatch $timer */
-		$timer = $this->stopwatch;
-		$timer->start('Get Body Fat Goal', 'Fitbit_API');
+		$timer = new Stopwatch();
+		$timer->start('Get Body Fat Goal', 'Fitbit API');
 
 		try
 		{
@@ -88,8 +88,8 @@ class GoalGateway extends EndpointGateway
 	public function getActivityDailyGoal()
 	{
 		/** @var Stopwatch $timer */
-		$timer = $this->stopwatch;
-		$timer->start('Get Activity Daily Goal', 'Fitbit_API');
+		$timer = new Stopwatch();
+		$timer->start('Get Activity Daily Goal', 'Fitbit API');
 
 		try
 		{
@@ -117,8 +117,8 @@ class GoalGateway extends EndpointGateway
 	public function getActivityWeeklyGoal()
 	{
 		/** @var Stopwatch $timer */
-		$timer = $this->stopwatch;
-		$timer->start('Get Activity Weekly Goal', 'Fitbit_API');
+		$timer = new Stopwatch();
+		$timer->start('Get Activity Weekly Goal', 'Fitbit API');
 
 		try
 		{
@@ -146,8 +146,8 @@ class GoalGateway extends EndpointGateway
 	public function getFoodGoal()
 	{
 		/** @var Stopwatch $timer */
-		$timer = $this->stopwatch;
-		$timer->start('Get Food Goal', 'Fitbit_API');
+		$timer = new Stopwatch();
+		$timer->start('Get Food Goal', 'Fitbit API');
 
 		try
 		{
@@ -175,8 +175,8 @@ class GoalGateway extends EndpointGateway
 	public function getWaterGoal()
 	{
 		/** @var Stopwatch $timer */
-		$timer = $this->stopwatch;
-		$timer->start('Get Water Goal', 'Fitbit_API');
+		$timer = new Stopwatch();
+		$timer->start('Get Water Goal', 'Fitbit API');
 
 		try
 		{

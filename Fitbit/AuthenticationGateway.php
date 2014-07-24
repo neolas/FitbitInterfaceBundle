@@ -31,15 +31,7 @@ class AuthenticationGateway extends EndpointGateway
     {
         try
         {
-	        /** @var bool $auth */
-	        $auth = $this->service->getStorage()->hasAccessToken('FitBit');
-	        try
-	        {
-		        $logger = RequestLogger::getInstance();
-		        $logger::logUser($auth);
-	        }
-	        catch(\Exception $e){}
-	        return $auth;
+	        return $this->service->getStorage()->hasAccessToken('FitBit');
         }
         catch (\Exception $e)
         {
@@ -80,8 +72,8 @@ class AuthenticationGateway extends EndpointGateway
     public function authenticateUser($token, $verifier)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Authenticating User', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Authenticating User', 'Fitbit API');
 
 	    try
 	    {
@@ -126,8 +118,8 @@ class AuthenticationGateway extends EndpointGateway
     public function resetSession()
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Resetting Session', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Resetting Session', 'Fitbit API');
 
 	    try
 	    {

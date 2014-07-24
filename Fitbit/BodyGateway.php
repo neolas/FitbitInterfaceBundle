@@ -35,8 +35,8 @@ class BodyGateway extends EndpointGateway
     public function getBody(\DateTime $date)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Get Body', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Get Body', 'Fitbit API');
 
         $dateStr = $date->format('Y-m-d');
 
@@ -77,8 +77,8 @@ class BodyGateway extends EndpointGateway
     public function logBody(\DateTime $date, $weight = null, $fat = null, $bicep = null, $calf = null, $chest = null, $forearm = null, $hips = null, $neck = null, $thigh = null, $waist = null)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Log Body', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Log Body', 'Fitbit API');
 
         $parameters = array();
         $parameters['date'] = $date->format('Y-m-d');
@@ -125,8 +125,8 @@ class BodyGateway extends EndpointGateway
     public function logWeight($weight, \DateTime $date = null)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Log Weight', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Log Weight', 'Fitbit API');
 
         $parameters = array();
         $parameters['weight'] = $weight;
@@ -159,8 +159,8 @@ class BodyGateway extends EndpointGateway
     public function getBloodPressure(\DateTime $date)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Get Blood Pressure', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Get Blood Pressure', 'Fitbit API');
 
         $dateStr = $date->format('Y-m-d');
 
@@ -194,8 +194,8 @@ class BodyGateway extends EndpointGateway
     public function logBloodPressure(\DateTime $date, $systolic, $diastolic, $time = false)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Log Blood Pressure', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Log Blood Pressure', 'Fitbit API');
 
         $parameters = array();
         $parameters['date'] = $date->format('Y-m-d');
@@ -230,8 +230,8 @@ class BodyGateway extends EndpointGateway
     public function deleteBloodPressure($id)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Delete Blood Pressure', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Delete Blood Pressure', 'Fitbit API');
 
         try
         {
@@ -260,8 +260,8 @@ class BodyGateway extends EndpointGateway
     public function getGlucose(\DateTime $date)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Get Glucose', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Get Glucose', 'Fitbit API');
 
         $dateStr = $date->format('Y-m-d');
 
@@ -296,8 +296,8 @@ class BodyGateway extends EndpointGateway
     public function logGlucose(\DateTime $date, $tracker, $glucose, $hba1c = null, $time = false)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Log Glucose', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Log Glucose', 'Fitbit API');
 
         $parameters = array();
         $parameters['date'] = $date->format('Y-m-d');
@@ -333,8 +333,8 @@ class BodyGateway extends EndpointGateway
     public function getHeartRate(\DateTime $date)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Get Heart Rate', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Get Heart Rate', 'Fitbit API');
 
         $dateStr = $date->format('Y-m-d');
 
@@ -368,8 +368,8 @@ class BodyGateway extends EndpointGateway
     public function logHeartRate(\DateTime $date, $tracker, $heartRate, $time = false)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Log Heart Rate', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Log Heart Rate', 'Fitbit API');
 
         $parameters = array();
         $parameters['date'] = $date->format('Y-m-d');
@@ -404,8 +404,8 @@ class BodyGateway extends EndpointGateway
     public function deleteHeartRate($id)
     {
 	    /** @var Stopwatch $timer */
-	    $timer = $this->stopwatch;
-	    $timer->start('Delete Heart Rate', 'Fitbit_API');
+	    $timer = new Stopwatch();
+	    $timer->start('Delete Heart Rate', 'Fitbit API');
 
         try
         {

@@ -80,10 +80,6 @@ class ApiGatewayFactory
 	 * @var Router
 	 */
 	protected $router;
-	/**
-	 * @var Stopwatch
-	 */
-	protected $stopwatch;
 
 	/**
 	 * Set the consumer credentials when this class is instantiated
@@ -95,16 +91,14 @@ class ApiGatewayFactory
 	 * @param string $callback_url Callback URL to provide to Fitbit
 	 * @param array  $configuration Configurable items
 	 * @param Router $router
-	 * @param Stopwatch $stopwatch
 	 */
-	public function __construct($consumer_key, $consumer_secret, $callback_url, $configuration, Router $router, Stopwatch $stopwatch = null)
+	public function __construct($consumer_key, $consumer_secret, $callback_url, $configuration, Router $router)
 	{
 		$this->consumerKey    = $consumer_key;
 		$this->consumerSecret = $consumer_secret;
 		$this->callbackURL    = $callback_url;
 		$this->configuration  = $configuration;
 		$this->router         = $router;
-		$this->stopwatch      = $stopwatch?$stopwatch:new Stopwatch();
 	}
 
 	/**
@@ -226,14 +220,14 @@ class ApiGatewayFactory
 	public function __call($method, $parameters)
 	{
 		/** @var Stopwatch $timer */
-		$timer = $this->stopwatch;
-		$timer->start('Establishing Gateway', 'Fitbit_API');
+		$timer = new Stopwatch();
+		$timer->start('Establishing Gateway', 'Fitbit API');
 		if (!preg_match('/^get.*Gateway$/', $method)) throw new FBException('Invalid API Gateway interface ('.$method.') requested.', 103);
 		if (count($parameters)) throw new FBException('API Gateway interfaces do not accept parameters.', 104);
 		$gatewayName = '\\'.__NAMESPACE__.'\\'.substr($method, 3);
 		try
 		{
-			$gateway = new $gatewayName($this->configuration, $this->stopwatch);
+			$gateway = new $gatewayName($this->configuration);
 		}
 		catch (\Exception $e)
 		{
@@ -305,7 +299,7 @@ class ApiGatewayFactory
 	        {
 	            $factory = new ServiceFactory();
 		        if ($this->httpClient) $factory->setHttpClient($this->httpClient);
-		        $this->service = $factory->createService('Fitbit', $credentials, $this->storageAdapter);
+		        $this->service = $factory->createService('FitBit', $credentials, $this->storageAdapter);
 	        }
 	        catch (\Exception $e)
 	        {
