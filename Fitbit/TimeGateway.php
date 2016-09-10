@@ -3,14 +3,14 @@
  *
  * Error Codes: 1201-1204
  */
-namespace Nibynool\FitbitInterfaceBundle\Fitbit;
+namespace Neolas\FitbitInterfaceBundle\Fitbit;
 
-use Nibynool\FitbitInterfaceBundle\Fitbit\Exception as FBException;
+use Neolas\FitbitInterfaceBundle\Fitbit\Exception as FBException;
 
 /**
  * Class TimeGateway
  *
- * @package Nibynool\FitbitInterfaceBundle\Fitbit
+ * @package Neolas\FitbitInterfaceBundle\Fitbit
  *
  * @since 0.1.0
  * @deprecated 0.5.0 No replacement available

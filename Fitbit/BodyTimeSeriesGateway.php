@@ -3,12 +3,12 @@
  *
  * Error Codes: 9XX
  */
-namespace Nibynool\FitbitInterfaceBundle\Fitbit;
+namespace Neolas\FitbitInterfaceBundle\Fitbit;
 
 /**
  * Class BodyTimeSeriesGateway
  *
- * @package Nibynool\FitbitInterfaceBundle\Fitbit
+ * @package Neolas\FitbitInterfaceBundle\Fitbit
  *
  * @since 0.1.0
  * @version 0.1.1

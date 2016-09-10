@@ -3,16 +3,16 @@
  *
  * Error Codes: 301 - 311
  */
-namespace Nibynool\FitbitInterfaceBundle\Fitbit;
+namespace Neolas\FitbitInterfaceBundle\Fitbit;
 
 use SimpleXMLElement;
 use Symfony\Component\Stopwatch\Stopwatch;
-use Nibynool\FitbitInterfaceBundle\Fitbit\Exception as FBException;
+use Neolas\FitbitInterfaceBundle\Fitbit\Exception as FBException;
 
 /**
  * Class BodyGateway
  *
- * @package Nibynool\FitbitInterfaceBundle\Fitbit
+ * @package Neolas\FitbitInterfaceBundle\Fitbit
  *
  * @since 0.1.0
  *

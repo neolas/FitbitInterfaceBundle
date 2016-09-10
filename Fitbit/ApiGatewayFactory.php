@@ -3,7 +3,7 @@
  *
  * Error Codes: 101 - 112
  */
-namespace Nibynool\FitbitInterfaceBundle\Fitbit;
+namespace Neolas\FitbitInterfaceBundle\Fitbit;
 
 use OAuth\Common\Consumer\Credentials;
 use OAuth\ServiceFactory;
@@ -12,12 +12,12 @@ use OAuth\Common\Storage\TokenStorageInterface;
 use OAuth\Common\Http\Client\ClientInterface;
 use Symfony\Bundle\FrameworkBundle\Routing\Router;
 use Symfony\Component\Stopwatch\Stopwatch;
-use Nibynool\FitbitInterfaceBundle\Fitbit\Exception as FBException;
+use Neolas\FitbitInterfaceBundle\Fitbit\Exception as FBException;
 
 /**
  * Class ApiGatewayFactory
  *
- * @package Nibynool\FitbitInterfaceBundle\Fitbit
+ * @package Neolas\FitbitInterfaceBundle\Fitbit
  *
  * @since 0.1.0
  * @version 0.5.0

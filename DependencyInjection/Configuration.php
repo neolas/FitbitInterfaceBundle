@@ -1,6 +1,6 @@
 <?php
 
-namespace Nibynool\FitbitInterfaceBundle\DependencyInjection;
+namespace Neolas\FitbitInterfaceBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

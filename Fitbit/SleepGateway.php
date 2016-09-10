@@ -3,16 +3,16 @@
  *
  * Error Codes: 1101-1103
  */
-namespace Nibynool\FitbitInterfaceBundle\Fitbit;
+namespace Neolas\FitbitInterfaceBundle\Fitbit;
 
 use SimpleXMLElement;
 use Symfony\Component\Stopwatch\Stopwatch;
-use Nibynool\FitbitInterfaceBundle\Fitbit\Exception as FBException;
+use Neolas\FitbitInterfaceBundle\Fitbit\Exception as FBException;
 
 /**
  * Class SleepGateway
  *
- * @package Nibynool\FitbitInterfaceBundle\Fitbit
+ * @package Neolas\FitbitInterfaceBundle\Fitbit
  *
  * @since 0.1.0
  */

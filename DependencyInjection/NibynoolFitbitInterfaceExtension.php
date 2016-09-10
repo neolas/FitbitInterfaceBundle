@@ -1,13 +1,13 @@
 <?php
 
-namespace Nibynool\FitbitInterfaceBundle\DependencyInjection;
+namespace Neolas\FitbitInterfaceBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\Config\FileLocator;
 
-class NibynoolFitbitInterfaceExtension extends Extension
+class NeolasFitbitInterfaceExtension extends Extension
 {
 	public function load(array $configs, ContainerBuilder $container)
 	{

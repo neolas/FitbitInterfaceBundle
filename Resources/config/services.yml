@@ -5,7 +5,7 @@ parameters:
     nibynool_fitbit_interface.configuration: []
 services:
     nibynool.fitbit.interface:
-        class:     Nibynool\FitbitInterfaceBundle\Fitbit\ApiGatewayFactory
+        class:     Neolas\FitbitInterfaceBundle\Fitbit\ApiGatewayFactory
         arguments:
             - %nibynool_fitbit_interface.key%
             - %nibynool_fitbit_interface.secret%
