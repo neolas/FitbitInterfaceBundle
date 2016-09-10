@@ -1,9 +1,9 @@
 {
-    "name":        "nibynool/fitbit-interface-bundle",
+    "name":        "neolas/fitbit-interface-bundle",
     "type":        "symfony-bundle",
     "description": "A Symfony >=2.3.0 Bundle for accessing the Fitbit API.",
     "keywords":    ["fitbit", "symfony"],
-    "homepage":    "https://github.com/nibynool/FitbitInterfaceBundle",
+    "homepage":    "https://github.com/neolas/FitbitInterfaceBundle",
     "license" :    "Apache-2.0",
     "authors": [
 	    {
@@ -26,18 +26,22 @@
 		{
 			"name":     "heyitspavel",
 			"homepage": "https://github.com/keyitspavel"
+		},
+		{
+			"name":		"Nicolas Perez",
+			"homepage":	"https://github.com/neolas"
 		}
     ],
     "require": {
         "php":                      ">=5.3.0",
-	    "symfony/framework-bundle": "~2.1",
+	    "symfony/framework-bundle": ">=2.3",
 	    "symfony/stopwatch":        "~2.3.15",
         "lusitanian/oauth":         "~0.3"
     },
     "autoload": {
         "psr-0": {
-            "Nibynool\\FitbitInterfaceBundle": ""
+            "Neolas\\FitbitInterfaceBundle": ""
         }
     },
-	"target-dir": "Nibynool/FitbitInterfaceBundle"
+	"target-dir": "Neolas/FitbitInterfaceBundle"
 }
